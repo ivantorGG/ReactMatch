@@ -64,6 +64,7 @@ class ReactMatch(QMainWindow):
         with open('first_load.txt', 'w', encoding='utf8') as f_write:
             f_write.write('False')
         if first_start[0] == 'True':
+            first_start[0] = 'False'
             for btn in [self.lang_change_btn, self.start_btn, self.name_label, self.login_btn,
                         self.caption_label, self.lang_change_btn, self.frofil_lbl, self.top_players_btn]:
                 btn.hide()
@@ -702,6 +703,10 @@ class ReactMatch(QMainWindow):
                 self.results_all_players.setItem(row, col, QTableWidgetItem(str(item[col])))
         con.close()
         update_wind(self.main_wind, self.level6_wind)
+        for el in [self.label, self.label_2, self.label_3, self.label_4, self.label_5, self.label_6,
+                   self.label_7, self.label_8, self.label_9, self.label_10, self.label_11, self.label_12,
+                   self.label_13, self.label_14, self.label_15, self.label_16]:
+            el.hide()
 
     def lvl4_animation_timer(self):
         """Анимация сундуков на 4 уровне"""
@@ -2258,6 +2263,10 @@ class ReactMatch(QMainWindow):
         self.login_error_label.setText('')  # текста надписи ошибки быть не должно
 
         update_wind(self.main_wind, self.login_wind)  # обновляем экран
+        for el in [self.label, self.label_2, self.label_3, self.label_4, self.label_5, self.label_6,
+                   self.label_7, self.label_8, self.label_9, self.label_10, self.label_11, self.label_12,
+                   self.label_13, self.label_14, self.label_15, self.label_16]:
+            el.hide()
 
     def login_is_done(self):
         """Логин закончен, кнопка окончания логина нажата"""
@@ -2283,6 +2292,10 @@ class ReactMatch(QMainWindow):
 
                     # обновляем экран
                     update_wind(self.login_wind, self.main_wind)
+                    for el in [self.label, self.label_2, self.label_3, self.label_4, self.label_5, self.label_6,
+                               self.label_7, self.label_8, self.label_9, self.label_10, self.label_11, self.label_12,
+                               self.label_13, self.label_14, self.label_15, self.label_16]:
+                        el.hide()
 
                 else:  # пароль не совпадает
                     # приколюха :)
@@ -2332,11 +2345,19 @@ class ReactMatch(QMainWindow):
     def back_to_mainwind(self):
         """Назад, на главный экран"""
         update_wind(self.login_wind + self.level6_wind, self.main_wind)
+        for el in [self.label, self.label_2, self.label_3, self.label_4, self.label_5, self.label_6,
+                   self.label_7, self.label_8, self.label_9, self.label_10, self.label_11, self.label_12,
+                   self.label_13, self.label_14, self.label_15, self.label_16]:
+            el.hide()
 
     def register(self):
         """Функция регистрации, кнопка регистрации нажата"""
         self.login_error_label.setText('')  # текста надписи ошибки быть не должно
         update_wind(self.login_wind, self.reg_wind)  # обновляем экран
+        for el in [self.label, self.label_2, self.label_3, self.label_4, self.label_5, self.label_6,
+                   self.label_7, self.label_8, self.label_9, self.label_10, self.label_11, self.label_12,
+                   self.label_13, self.label_14, self.label_15, self.label_16]:
+            el.hide()
 
     def reg_is_done(self):
         """Регистрация окончена, кнопка окончания регистрации нажата"""
@@ -2361,6 +2382,10 @@ class ReactMatch(QMainWindow):
 
                 # обновление экрана
                 update_wind(self.reg_wind, self.main_wind)
+                for el in [self.label, self.label_2, self.label_3, self.label_4, self.label_5, self.label_6,
+                           self.label_7, self.label_8, self.label_9, self.label_10, self.label_11, self.label_12,
+                           self.label_13, self.label_14, self.label_15, self.label_16]:
+                    el.hide()
 
             else:  # юзер старый, он есть в списке
                 if self.lang == 'RU':  # если русский язык
@@ -2385,6 +2410,10 @@ class ReactMatch(QMainWindow):
 
     def back_to_loginwind(self):
         update_wind(self.reg_wind, self.login_wind)
+        for el in [self.label, self.label_2, self.label_3, self.label_4, self.label_5, self.label_6,
+                   self.label_7, self.label_8, self.label_9, self.label_10, self.label_11, self.label_12,
+                   self.label_13, self.label_14, self.label_15, self.label_16]:
+            el.hide()
 
     def lang_changed(self):
         """Язык изменяется"""
